@@ -18,27 +18,30 @@ import javafx.stage.Stage;
  * @author shayla
  */
 public class MonopolyStatTrack extends Application {
-    
+        
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
+        
+        StatTrackWindow window = new StatTrackWindow();
+        window.show();
+        
+        //Button btn = new Button();
+        //btn.setText("Say 'Hello World'");
+        //btn.setOnAction(new EventHandler<ActionEvent>() {
             
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+            //@Override
+            //public void handle(ActionEvent event) {
+                //System.out.println("Hello World!");
+            //}
+        //});
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        //StackPane root = new StackPane();
         
-        Scene scene = new Scene(root, 300, 250);
+        //Scene scene = new Scene(root, 300, 250);
         
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        //primaryStage.setTitle("Hello World!");
+        //primaryStage.setScene(scene);
+        //primaryStage.show();
     }
 
     /**
