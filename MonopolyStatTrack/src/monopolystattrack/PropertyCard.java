@@ -27,38 +27,130 @@ public class PropertyCard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        propertyName = new javax.swing.JLabel();
+        rentTitle = new javax.swing.JLabel();
+        rentValue = new javax.swing.JLabel();
+        visitorPanel = new javax.swing.JPanel();
+        visitorSubtract = new javax.swing.JButton();
+        visitorTitle = new javax.swing.JLabel();
+        visitors = new javax.swing.JLabel();
+        visitorAdd = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setBackground(new java.awt.Color(24, 54, 187));
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(24, 54, 187));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Boardwalk");
-        jLabel1.setToolTipText("");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        propertyName.setBackground(new java.awt.Color(24, 54, 187));
+        propertyName.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
+        propertyName.setForeground(new java.awt.Color(24, 54, 187));
+        propertyName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        propertyName.setText("Boardwalk");
+        propertyName.setToolTipText("");
+        propertyName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(24, 54, 187), null, null));
+
+        rentTitle.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        rentTitle.setText("RENT:");
+
+        rentValue.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        rentValue.setText("50");
+
+        visitorPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        visitorSubtract.setText("-");
+        visitorSubtract.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visitorSubtractActionPerformed(evt);
+            }
+        });
+
+        visitorTitle.setText("Visitors");
+
+        visitors.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        visitors.setText("0");
+
+        visitorAdd.setText("+");
+        visitorAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visitorAddActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout visitorPanelLayout = new javax.swing.GroupLayout(visitorPanel);
+        visitorPanel.setLayout(visitorPanelLayout);
+        visitorPanelLayout.setHorizontalGroup(
+            visitorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(visitorPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(visitorSubtract, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(visitors, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(visitorAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, visitorPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(visitorTitle)
+                .addGap(48, 48, 48))
+        );
+        visitorPanelLayout.setVerticalGroup(
+            visitorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, visitorPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(visitorTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(visitorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(visitors)
+                    .addComponent(visitorSubtract)
+                    .addComponent(visitorAdd))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(66, Short.MAX_VALUE)
+                .addComponent(propertyName, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56))
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addComponent(rentTitle)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rentValue))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(visitorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel1)
-                .addContainerGap(241, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addComponent(propertyName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rentTitle)
+                    .addComponent(rentValue))
+                .addGap(24, 24, 24)
+                .addComponent(visitorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void visitorSubtractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitorSubtractActionPerformed
+        int num = Integer.parseInt(visitors.getText());
+        num--;
+        visitors.setText(Integer.toString(num));
+    }//GEN-LAST:event_visitorSubtractActionPerformed
+
+    private void visitorAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitorAddActionPerformed
+        int num = Integer.parseInt(visitors.getText());
+        num++;
+        visitors.setText(Integer.toString(num));    }//GEN-LAST:event_visitorAddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,9 +185,17 @@ public class PropertyCard extends javax.swing.JFrame {
                 new PropertyCard().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel propertyName;
+    private javax.swing.JLabel rentTitle;
+    private javax.swing.JLabel rentValue;
+    private javax.swing.JButton visitorAdd;
+    private javax.swing.JPanel visitorPanel;
+    private javax.swing.JButton visitorSubtract;
+    private javax.swing.JLabel visitorTitle;
+    private javax.swing.JLabel visitors;
     // End of variables declaration//GEN-END:variables
 }

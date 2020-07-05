@@ -22,7 +22,8 @@ public class MonopolyStatTrack extends Application {
     @Override
     public void start(Stage primaryStage) {
         
-        StatTrackWindow window = new StatTrackWindow();
+        //StatTrackWindow window = new StatTrackWindow();
+        PropertyCard window = new PropertyCard();
         window.show();
         
         //Button btn = new Button();
