@@ -35,6 +35,14 @@ public class PropertyCard extends javax.swing.JFrame {
         visitorTitle = new javax.swing.JLabel();
         visitors = new javax.swing.JLabel();
         visitorAdd = new javax.swing.JButton();
+        housePanel = new javax.swing.JPanel();
+        houseTitle = new javax.swing.JLabel();
+        houseSubtract = new javax.swing.JButton();
+        houseAdd = new javax.swing.JButton();
+        houses = new javax.swing.JLabel();
+        profitPanel = new javax.swing.JPanel();
+        totalProfitTitle = new javax.swing.JLabel();
+        totalProfit = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -81,15 +89,15 @@ public class PropertyCard extends javax.swing.JFrame {
             .addGroup(visitorPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(visitorSubtract, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
-                .addComponent(visitors, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(visitors, javax.swing.GroupLayout.DEFAULT_SIZE, 10, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(visitorAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, visitorPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(visitorTitle)
-                .addGap(48, 48, 48))
+                .addGap(39, 39, 39))
         );
         visitorPanelLayout.setVerticalGroup(
             visitorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,25 +112,111 @@ public class PropertyCard extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        housePanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        houseTitle.setText("Houses");
+
+        houseSubtract.setText("-");
+        houseSubtract.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                houseSubtractActionPerformed(evt);
+            }
+        });
+
+        houseAdd.setText("+");
+        houseAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                houseAddActionPerformed(evt);
+            }
+        });
+
+        houses.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        houses.setText("0");
+
+        javax.swing.GroupLayout housePanelLayout = new javax.swing.GroupLayout(housePanel);
+        housePanel.setLayout(housePanelLayout);
+        housePanelLayout.setHorizontalGroup(
+            housePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(housePanelLayout.createSequentialGroup()
+                .addComponent(houseSubtract, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(houses, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(houseAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(housePanelLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(houseTitle)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        housePanelLayout.setVerticalGroup(
+            housePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(housePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(houseTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(housePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(houseSubtract)
+                    .addComponent(houseAdd)
+                    .addComponent(houses))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+
+        profitPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        totalProfitTitle.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        totalProfitTitle.setText("Total Profits");
+
+        totalProfit.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        totalProfit.setText("0");
+
+        javax.swing.GroupLayout profitPanelLayout = new javax.swing.GroupLayout(profitPanel);
+        profitPanel.setLayout(profitPanelLayout);
+        profitPanelLayout.setHorizontalGroup(
+            profitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profitPanelLayout.createSequentialGroup()
+                .addContainerGap(33, Short.MAX_VALUE)
+                .addComponent(totalProfitTitle)
+                .addGap(42, 42, 42))
+            .addGroup(profitPanelLayout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(totalProfit)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        profitPanelLayout.setVerticalGroup(
+            profitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(profitPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(totalProfitTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(totalProfit)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(66, Short.MAX_VALUE)
-                .addComponent(propertyName, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(173, 173, 173)
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(propertyName, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(visitorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(housePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(profitPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(4, 4, 4))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(136, 136, 136)
                         .addComponent(rentTitle)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rentValue))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(visitorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(rentValue)))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,9 +227,14 @@ public class PropertyCard extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rentTitle)
                     .addComponent(rentValue))
-                .addGap(24, 24, 24)
-                .addComponent(visitorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(visitorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(housePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(profitPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(67, 67, 67))
         );
 
         pack();
@@ -143,14 +242,97 @@ public class PropertyCard extends javax.swing.JFrame {
 
     private void visitorSubtractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitorSubtractActionPerformed
         int num = Integer.parseInt(visitors.getText());
+        int rent = Integer.parseInt(rentValue.getText());
+        int totalProf = Integer.parseInt(totalProfit.getText());
         num--;
+        if(num < 0) num = 0;
         visitors.setText(Integer.toString(num));
+        totalProf = totalProf - rent; 
+        totalProfit.setText(Integer.toString(totalProf));
     }//GEN-LAST:event_visitorSubtractActionPerformed
 
     private void visitorAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visitorAddActionPerformed
+        
         int num = Integer.parseInt(visitors.getText());
+        int rent = Integer.parseInt(rentValue.getText());
+        int totalProf = Integer.parseInt(totalProfit.getText());
         num++;
-        visitors.setText(Integer.toString(num));    }//GEN-LAST:event_visitorAddActionPerformed
+        visitors.setText(Integer.toString(num));
+        totalProf = totalProf + rent; 
+        totalProfit.setText(Integer.toString(totalProf));
+
+
+    }//GEN-LAST:event_visitorAddActionPerformed
+
+    private void houseSubtractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_houseSubtractActionPerformed
+        int num = Integer.parseInt(houses.getText());
+        num--;
+        if(num < 0) num = 0;
+        houses.setText(Integer.toString(num));
+        
+        int houseNum = Integer.parseInt(houses.getText());
+        int rentVal = Integer.parseInt(rentValue.getText());
+        
+        if(houseNum == 0) {
+            rentVal = 50;
+            rentValue.setText(Integer.toString(rentVal)); 
+        }
+        if(houseNum == 1) {
+            rentVal = 200;
+            rentValue.setText(Integer.toString(rentVal));
+        } 
+        if (houseNum == 2) {
+            rentVal = 400;
+            rentValue.setText(Integer.toString(rentVal));
+        } 
+        if (houseNum == 3) {
+            rentVal = 1400;
+            rentValue.setText(Integer.toString(rentVal));
+        } 
+        if (houseNum == 4) {
+            rentVal = 1700;
+            rentValue.setText(Integer.toString(rentVal));            
+        }
+    }//GEN-LAST:event_houseSubtractActionPerformed
+
+    private void houseAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_houseAddActionPerformed
+        int num = Integer.parseInt(houses.getText());
+        num++;
+        if(num > 4) num = 4;
+        houses.setText(Integer.toString(num));
+        
+        int houseNum = Integer.parseInt(houses.getText());
+        int rentVal = Integer.parseInt(rentValue.getText());
+        
+        // If own monopoly rent is double
+        // 1 houses makes rent 200 
+        // 2 houses makes rent 400
+        // 3 houses makes rent 1400
+        // 4 houses makes rent 1700
+        // 1 Hotel makes rent 2000
+        
+        if(houseNum == 0) {
+            rentVal = 50;
+            rentValue.setText(Integer.toString(rentVal)); 
+        }        
+        if(houseNum == 1) {
+            rentVal = 200;
+            rentValue.setText(Integer.toString(rentVal));
+        } 
+        if (houseNum == 2) {
+            rentVal = 400;
+            rentValue.setText(Integer.toString(rentVal));
+        } 
+        if (houseNum == 3) {
+            rentVal = 1400;
+            rentValue.setText(Integer.toString(rentVal));
+        } 
+        if (houseNum == 4) {
+            rentVal = 1700;
+            rentValue.setText(Integer.toString(rentVal));            
+        }
+        
+      }//GEN-LAST:event_houseAddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,9 +371,17 @@ public class PropertyCard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton houseAdd;
+    private javax.swing.JPanel housePanel;
+    private javax.swing.JButton houseSubtract;
+    private javax.swing.JLabel houseTitle;
+    private javax.swing.JLabel houses;
+    private javax.swing.JPanel profitPanel;
     private javax.swing.JLabel propertyName;
     private javax.swing.JLabel rentTitle;
     private javax.swing.JLabel rentValue;
+    private javax.swing.JLabel totalProfit;
+    private javax.swing.JLabel totalProfitTitle;
     private javax.swing.JButton visitorAdd;
     private javax.swing.JPanel visitorPanel;
     private javax.swing.JButton visitorSubtract;
