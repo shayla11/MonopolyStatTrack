@@ -22,26 +22,33 @@ public class PropertyCard extends javax.swing.JFrame {
     }
     
     enum Property {
-        BOARDWALK (1, 200, 400, 1400, 1700, 200);
+        BOARDWALK (50, 100, 200, 400, 1400, 1700, 200);
         
-        private final int noHRent;
-        private final int oneHRent;
-        private final int twoHRent;
-        private final int threeHRent;
-        private final int fourHRent;
-        private final int hotelRent;
+        private final int noHR; //no house rent nhr
+        private final int monHR; // monopoly price with out houses
+        private final int oneHR; // one house rent oneHR
+        private final int twoHR;
+        private final int threeHR;
+        private final int fourHR;
+        private final int hotelR;
         
-        Property(int noHRent, int oneHRent, int twoHRent, int threeHRent, int fourHRent, int hotelRent) {
-            this.noHRent = noHRent;
-            this.oneHRent = oneHRent;
-            this.twoHRent = twoHRent;
-            this.threeHRent = threeHRent;
-            this.fourHRent = fourHRent;
-            this.hotelRent = hotelRent;
+        Property(int noHR, int monHR, int oneHR, int twoHR, int threeHR, int fourHR, int hotelR) {
+            this.noHR = noHR;
+            this.monHR = monHR;
+            this.oneHR = oneHR;
+            this.twoHR = twoHR;
+            this.threeHR = threeHR;
+            this.fourHR = fourHR;
+            this.hotelR = hotelR;
         }
-        private int rent() {
-            return noHRent;
-        }
+        
+        private int getNoHouserent() { return noHR;}
+        private int getMonopolyRent() { return monHR;}
+        private int getOneHouserent() { return oneHR;}
+        private int getTwoHouserent() { return twoHR;}
+        private int getThreeHouserent() { return threeHR;}
+        private int getFourHouserent() { return fourHR;}
+        private int getHotelRent() { return hotelR;}
         
     }
     
@@ -451,7 +458,7 @@ public class PropertyCard extends javax.swing.JFrame {
             rentValue.setText(Integer.toString(rentVal)); 
         }        
         if(houseNum == 1) {
-            rentVal = BOARDWALK.rent();
+            rentVal = 200;
             rentValue.setText(Integer.toString(rentVal));
         } 
         if (houseNum == 2) {
