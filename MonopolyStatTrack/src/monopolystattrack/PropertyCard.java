@@ -6,6 +6,7 @@
 package monopolystattrack;
 
 import java.awt.Color;
+import static monopolystattrack.PropertyCard.Property.BOARDWALK;
 
 /**
  *
@@ -21,7 +22,7 @@ public class PropertyCard extends javax.swing.JFrame {
     }
     
     enum Property {
-        BOARDWALK (50, 200, 400, 1400, 1700, 200);
+        BOARDWALK (1, 200, 400, 1400, 1700, 200);
         
         private final int noHRent;
         private final int oneHRent;
@@ -37,6 +38,9 @@ public class PropertyCard extends javax.swing.JFrame {
             this.threeHRent = threeHRent;
             this.fourHRent = fourHRent;
             this.hotelRent = hotelRent;
+        }
+        private int rent() {
+            return noHRent;
         }
         
     }
@@ -447,7 +451,7 @@ public class PropertyCard extends javax.swing.JFrame {
             rentValue.setText(Integer.toString(rentVal)); 
         }        
         if(houseNum == 1) {
-            rentVal = 200;
+            rentVal = BOARDWALK.rent();
             rentValue.setText(Integer.toString(rentVal));
         } 
         if (houseNum == 2) {
