@@ -22,7 +22,8 @@ public class PropertyCard extends javax.swing.JFrame {
     }
     
     enum Property {
-        BOARDWALK (50, 100, 200, 400, 1400, 1700, 200);
+        BOARDWALK (50, 100, 200, 600, 1400, 1700, 2000, 400),
+        PARK_PLACE (35, 70, 175, 500, 1100, 1300, 1500, 350);
         
         private final int noHR; //no house rent nhr
         private final int monHR; // monopoly price with out houses
@@ -31,8 +32,9 @@ public class PropertyCard extends javax.swing.JFrame {
         private final int threeHR;
         private final int fourHR;
         private final int hotelR;
+        private final int propCost; //property cost
         
-        Property(int noHR, int monHR, int oneHR, int twoHR, int threeHR, int fourHR, int hotelR) {
+        Property(int noHR, int monHR, int oneHR, int twoHR, int threeHR, int fourHR, int hotelR, int propCost) {
             this.noHR = noHR;
             this.monHR = monHR;
             this.oneHR = oneHR;
@@ -40,6 +42,7 @@ public class PropertyCard extends javax.swing.JFrame {
             this.threeHR = threeHR;
             this.fourHR = fourHR;
             this.hotelR = hotelR;
+            this.propCost = propCost;
         }
         
         private int getNoHouserent() { return noHR;}
@@ -49,6 +52,7 @@ public class PropertyCard extends javax.swing.JFrame {
         private int getThreeHouserent() { return threeHR;}
         private int getFourHouserent() { return fourHR;}
         private int getHotelRent() { return hotelR;}
+        private int getPropertyCost() { return propCost;}
         
     }
     
