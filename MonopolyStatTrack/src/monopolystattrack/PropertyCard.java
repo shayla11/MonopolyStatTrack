@@ -19,6 +19,28 @@ public class PropertyCard extends javax.swing.JFrame {
     public PropertyCard() {
         initComponents();
     }
+    
+    enum Property {
+        BOARDWALK (50, 200, 400, 1400, 1700, 200);
+        
+        private final int noHRent;
+        private final int oneHRent;
+        private final int twoHRent;
+        private final int threeHRent;
+        private final int fourHRent;
+        private final int hotelRent;
+        
+        Property(int noHRent, int oneHRent, int twoHRent, int threeHRent, int fourHRent, int hotelRent) {
+            this.noHRent = noHRent;
+            this.oneHRent = oneHRent;
+            this.twoHRent = twoHRent;
+            this.threeHRent = threeHRent;
+            this.fourHRent = fourHRent;
+            this.hotelRent = hotelRent;
+        }
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -486,6 +508,7 @@ public class PropertyCard extends javax.swing.JFrame {
         });
         
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel costTitle;
