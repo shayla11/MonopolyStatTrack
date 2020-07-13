@@ -21,6 +21,16 @@ public class PropertyCard extends javax.swing.JFrame {
         initComponents();
     }
     
+    //Enum for Utilities
+    enum Utilities {
+        
+    }
+    
+    //Enum for Railroad values
+    enum Railroad {
+        
+    }
+    //Enum for Property Values
     enum Property {
         
         //Purple
