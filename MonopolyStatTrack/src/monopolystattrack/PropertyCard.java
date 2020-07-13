@@ -22,8 +22,24 @@ public class PropertyCard extends javax.swing.JFrame {
     }
     
     enum Property {
-        BOARDWALK (50, 100, 200, 600, 1400, 1700, 2000, 400),
-        PARK_PLACE (35, 70, 175, 500, 1100, 1300, 1500, 350);
+        
+        //Purple
+        MEDITERRANEAN_AVE (2, 4, 10, 30, 90, 160, 250, 60),
+        BALTIC_AVE (4, 8, 20, 60, 180, 320, 450, 60),
+        
+        //Light Blue
+        ORIENTAL_AVE (6, 12, 30, 90, 270, 400, 550, 100),
+        VERMONT_AVE (6, 12, 30, 90, 270, 400, 550, 100),
+        CONNECTICUT_AVE (8, 16, 40, 100, 300, 450, 600, 120),
+        
+        //Magenta
+        ST_CHARLES_PLACE (10, 20, 50, 150, 450, 625, 750, 140),
+        STATES_AVE (10, 20, 50, 150, 450, 625, 750, 140),
+        VIRGINIA_AVE (12, 24, 60, 180, 500, 700, 900, 160),
+        
+        //Dark Blue
+        PARK_PLACE (35, 70, 175, 500, 1100, 1300, 1500, 350),
+        BOARDWALK (50, 100, 200, 600, 1400, 1700, 2000, 400);
         
         private final int noHR; //no house rent nhr
         private final int monHR; // monopoly price with out houses
