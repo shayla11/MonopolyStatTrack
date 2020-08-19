@@ -13,6 +13,8 @@ import static monopolystattrack.PropertyCard.Property.BOARDWALK;
  * @author shayla
  */
 public class PropertyCard extends javax.swing.JFrame {
+    
+    Property prop = Property.BOARDWALK;
 
     /**
      * Creates new form PropertyCard
@@ -99,6 +101,9 @@ public class PropertyCard extends javax.swing.JFrame {
         private int getFourHouserent() { return fourHR;}
         private int getHotelRent() { return hotelR;}
         private int getPropertyCost() { return propCost;}
+        
+        //make some extravagent if statement for the slelection of the property 
+        //to be chosen and then the button should connect to the correct property
         
     }
     
@@ -483,23 +488,23 @@ public class PropertyCard extends javax.swing.JFrame {
         int rentVal = Integer.parseInt(rentValue.getText());
         
         if(houseNum == 0) {
-            rentVal = 50;
+            rentVal = prop.getNoHouserent();
             rentValue.setText(Integer.toString(rentVal)); 
         }
         if(houseNum == 1) {
-            rentVal = 200;
+            rentVal = prop.oneHR;
             rentValue.setText(Integer.toString(rentVal));
         } 
         if (houseNum == 2) {
-            rentVal = 400;
+            rentVal = prop.twoHR;
             rentValue.setText(Integer.toString(rentVal));
         } 
         if (houseNum == 3) {
-            rentVal = 1400;
+            rentVal = prop.threeHR;
             rentValue.setText(Integer.toString(rentVal));
         } 
         if (houseNum == 4) {
-            rentVal = 1700;
+            rentVal = prop.fourHR;
             rentValue.setText(Integer.toString(rentVal));            
         }
     }//GEN-LAST:event_houseSubtractActionPerformed
@@ -521,23 +526,23 @@ public class PropertyCard extends javax.swing.JFrame {
         // 1 Hotel makes rent 2000
         
         if(houseNum == 0) {
-            rentVal = 50;
+            rentVal = prop.getNoHouserent();
             rentValue.setText(Integer.toString(rentVal)); 
         }        
         if(houseNum == 1) {
-            rentVal = 200;
+            rentVal = prop.getOneHouserent();
             rentValue.setText(Integer.toString(rentVal));
         } 
         if (houseNum == 2) {
-            rentVal = 400;
+            rentVal = prop.getTwoHouserent();
             rentValue.setText(Integer.toString(rentVal));
         } 
         if (houseNum == 3) {
-            rentVal = 1400;
+            rentVal = prop.getThreeHouserent();
             rentValue.setText(Integer.toString(rentVal));
         } 
         if (houseNum == 4) {
-            rentVal = 1700;
+            rentVal = prop.getFourHouserent();
             rentValue.setText(Integer.toString(rentVal));            
         }
         
@@ -545,20 +550,20 @@ public class PropertyCard extends javax.swing.JFrame {
 
     private void hotelBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hotelBoxActionPerformed
         if (hotelBox.isSelected()) {
-            rentValue.setText("2000");
+            rentValue.setText(""+prop.hotelR);
         } else if (!hotelBox.isSelected()) {
-            rentValue.setText("50");
+            rentValue.setText(""+prop.noHR);
         }
     }//GEN-LAST:event_hotelBoxActionPerformed
 
     private void monopolyBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monopolyBoxActionPerformed
         if (monopolyBox.isSelected()) {
-            rentValue.setText("100");
+            rentValue.setText(""+prop.monHR);
         } else if (!monopolyBox.isSelected()) {
-            rentValue.setText("50");
-        }    }//GEN-LAST:event_monopolyBoxActionPerformed
+            rentValue.setText(""+prop.noHR);
+        }
+    }//GEN-LAST:event_monopolyBoxActionPerformed
 
-    
     /**
      * @param args the command line arguments
      */
