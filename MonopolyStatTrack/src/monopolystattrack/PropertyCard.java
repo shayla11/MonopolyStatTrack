@@ -33,7 +33,7 @@ public class PropertyCard extends javax.swing.JFrame {
     //Enum for Property Values
     enum Property {
         
-        //Purple
+        //Purple / Brown
         MEDITERRANEAN_AVE (2, 4, 10, 30, 90, 160, 250, 60),
         BALTIC_AVE (4, 8, 20, 60, 180, 320, 450, 60),
         
@@ -136,6 +136,7 @@ public class PropertyCard extends javax.swing.JFrame {
         sentenceText = new javax.swing.JLabel();
         costTitle = new javax.swing.JLabel();
         propertyPrice = new javax.swing.JLabel();
+        monopolyBox = new javax.swing.JCheckBox();
 
         jLabel1.setText("jLabel1");
 
@@ -346,6 +347,14 @@ public class PropertyCard extends javax.swing.JFrame {
 
         propertyPrice.setText("400");
 
+        monopolyBox.setText("Monopoly");
+        monopolyBox.setToolTipText("");
+        monopolyBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                monopolyBoxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -358,40 +367,48 @@ public class PropertyCard extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(costTitle)
-                                .addGap(4, 4, 4)
-                                .addComponent(propertyPrice)
-                                .addGap(42, 42, 42)
-                                .addComponent(rentTitle)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rentValue))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(visitorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(housePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(24, 24, 24)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(profitPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(profitChecker, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-                .addContainerGap(38, Short.MAX_VALUE))
+                                    .addComponent(profitChecker, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(costTitle)
+                                .addGap(4, 4, 4)
+                                .addComponent(propertyPrice)
+                                .addGap(42, 42, 42)
+                                .addComponent(rentTitle)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rentValue)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(monopolyBox)))))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(propertyName)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rentTitle)
-                            .addComponent(rentValue))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(16, 16, 16)
+                        .addComponent(propertyName)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(rentTitle)
+                                    .addComponent(rentValue))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(costTitle)
+                                    .addComponent(propertyPrice))
+                                .addGap(18, 18, 18))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(costTitle)
-                            .addComponent(propertyPrice))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(monopolyBox)
                         .addGap(18, 18, 18)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
@@ -534,6 +551,14 @@ public class PropertyCard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_hotelBoxActionPerformed
 
+    private void monopolyBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monopolyBoxActionPerformed
+        if (monopolyBox.isSelected()) {
+            rentValue.setText("100");
+        } else if (!monopolyBox.isSelected()) {
+            rentValue.setText("50");
+        }    }//GEN-LAST:event_monopolyBoxActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -581,6 +606,7 @@ public class PropertyCard extends javax.swing.JFrame {
     private javax.swing.JLabel houseTitle;
     private javax.swing.JLabel houses;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JCheckBox monopolyBox;
     private javax.swing.JPanel profitChecker;
     private javax.swing.JPanel profitPanel;
     private javax.swing.JLabel propertyName;
